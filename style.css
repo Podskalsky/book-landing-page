@@ -1,0 +1,141 @@
+@import 'https://fonts.googleapis.com/css2?family=Manrope&family=Open+Sans:wght@300&display=swap';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	--white: #faf4f4;
+	--light-orange: #ffc583;
+	--dark-orange: #9c5518;
+	--brown: #5a3f11;
+	--black: #1b1b2f;
+	--red: #f8452a;
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	font-family: 'Manrope', sans-serif;
+}
+#cta {
+	height: 100vh;
+	background: linear-gradient(135deg, var(--light-orange), var(--light-orange), var(--red));
+	min-height: 600px;
+}
+
+.cta-title {
+	text-align: center;
+	font-family: 'Manrope', sans-serif;
+	font-size: 8vmin;
+	padding: 3rem 0;
+	color: var(--black);
+	line-height: 1.1;
+}
+
+.swift {
+	display: block;
+	font-size: 1.125em;
+	text-transform: uppercase;
+	color: #ff2200;
+	letter-spacing: 2px;
+}
+
+.container {
+	display: grid;
+	grid-gap: 20px 15px;
+	grid-template-columns: minmax(auto, 92%) auto;
+	grid-template-rows: max-content minmax(10%, 50%);
+	width: 90%;
+	background: rgba(256, 256, 256, 0.7);
+	height: 67vh;
+	margin: auto;
+	padding: 1.5rem 2rem;
+	max-width: 1100px;
+	border-radius: 5px;
+}
+
+.book {
+	max-width: 100%;
+	max-height: 100%;
+	transition: 1s;
+	margin: auto;
+	transform: rotate(8deg);
+	box-shadow: 3px 5px 20px 0px var(--brown);
+	place-self: flex-end;
+}
+
+.download {
+	text-align: center;
+	text-decoration: none;
+	color: var(--white);
+	background-color: var(--brown);
+	align-self: center;
+	place-self: center;
+	padding: 2vmin 4vmin;
+	border-radius: 40px;
+	transition: background 0.25s;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.download:hover,
+.download:focus {
+	background: var(--dark-orange);
+}
+
+.about {
+	grid-column: 1/3;
+}
+
+.about-title {
+	color: var(--black);
+	font-weight: 600;
+	font-size: 5vmin;
+	margin-top: 0;
+}
+
+@media (max-width: 400px) {
+	.container {
+		grid-template-columns: minmax(auto, 65%) auto;
+		padding: 1rem 1.4rem;
+	}
+	.book {
+		transform: scale(1.15) translate(18px, 20px) rotate(8deg);
+	}
+}
+
+@media (min-width: 900px) {
+	.container {
+		grid-template-rows: 30% minmax(50%, auto);
+		padding: 2.5rem 3rem;
+		grid-column-gap: 50px;
+	}
+	.book {
+		grid-area: 1 / 1 / 3 / 1;
+		transform: none;
+		max-height: 94%;
+	}
+
+	.book:hover {
+		transform: skew(-7deg, -2deg);
+	}
+
+	.about {
+		grid-area: 1 / 2 / 1 / 2;
+	}
+	.download {
+		grid-area: 2 / 2 / 2 / 2;
+		padding: 1.5rem 4rem;
+		border-radius: 80px;
+	}
+}
+
+@media (min-width: 900px) {
+	.swift {
+		display: inline;
+		margin-right: 1rem;
+	}
+}
